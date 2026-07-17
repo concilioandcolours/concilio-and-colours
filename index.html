@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concilio & Colours — Hand-painted 3D printed charms, keychains & lamps</title>
+<meta name="description" content="Concilio & Colours: 3D printed, hand-painted charms, keychains, lamps and made-to-order pieces. Custom orders for events, weddings and gifting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Karla:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F3ECDC;
+    --card:#FBF6EC;
+    --card-warm:#F7EEDD;
+    --terracotta:#C1602E;
+    --terracotta-dark:#9C4A22;
+    --walnut:#34231A;
+    --walnut-soft:#5B4535;
+    --gold:#D9A441;
+    --sage:#6F7A54;
+    --line: rgba(52,35,26,0.14);
+    --paper-shadow: 0 10px 30px rgba(52,35,26,0.12);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--walnut);
+    font-family:'Karla', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    margin:0 0 0.4em 0;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.72rem;
+    color:var(--terracotta-dark);
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px;height:1.5px;
+    background:var(--terracotta);
+    display:inline-block;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  section{padding:96px 0;}
+  @media(max-width:780px){ section{padding:64px 0;} }
+
+  /* ---------- Paint-dab motif (signature element) ---------- */
+  .dabs{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin:28px 0;
+  }
+  .dabs span{
+    width:14px;height:14px;
+    border-radius:50% 48% 52% 46% / 55% 45% 55% 45%;
+    display:inline-block;
+    box-shadow: inset -2px -2px 3px rgba(0,0,0,0.12);
+  }
+  .dabs span:nth-child(1){background:var(--terracotta);}
+  .dabs span:nth-child(2){background:var(--gold);}
+  .dabs span:nth-child(3){background:var(--sage);}
+  .dabs span:nth-child(4){background:var(--walnut-soft); opacity:0.6;}
+  .dabs.center{justify-content:center;}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(243,236,220,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.35rem;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .logo-mark{
+    width:44px; height:44px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  footer .logo-mark{ width:52px; height:52px; }
+  .logo .amp{ color:var(--terracotta); font-style:italic; font-weight:500; }
+  .navlinks{
+    display:flex; gap:34px;
+    font-size:0.95rem;
+    font-weight:600;
+  }
+  .navlinks a{ text-decoration:none; position:relative; padding-bottom:3px;}
+  .navlinks a:hover{ color:var(--terracotta-dark); }
+  .nav-cta{
+    background:var(--terracotta);
+    color:var(--card);
+    padding:10px 20px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.9rem;
+    white-space:nowrap;
+    transition:background .2s ease;
+  }
+  .nav-cta:hover{ background:var(--terracotta-dark); }
+  .navToggle{ display:none; }
+  @media(max-width:820px){
+    .navlinks{ display:none; }
+    .navToggle{ display:block; background:none; border:none; font-family:'Space Mono',monospace; font-size:0.85rem; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding-top:70px;
+    padding-bottom:40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  @media(max-width:900px){
+    .hero .wrap{ grid-template-columns:1fr; }
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.05;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--terracotta);
+    font-weight:500;
+  }
+  .hero p.lead{
+    font-size:1.12rem;
+    color:var(--walnut-soft);
+    max-width:44ch;
+    margin:22px 0 34px 0;
+  }
+  .btnrow{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    padding:14px 26px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.98rem;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--terracotta); color:var(--card); box-shadow:var(--paper-shadow); }
+  .btn-primary:hover{ background:var(--terracotta-dark); }
+  .btn-ghost{ background:transparent; color:var(--walnut); border:1.5px solid var(--walnut); }
+  .btn-ghost:hover{ background:var(--walnut); color:var(--cream); }
+
+  .hero-collage{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:16px;
+  }
+  .hero-collage img{
+    border-radius:14px;
+    object-fit:cover;
+    box-shadow:var(--paper-shadow);
+  }
+  .hc-a{ grid-row:1/3; height:100%; aspect-ratio:3/4; width:100%; object-fit:cover;}
+  .hc-b{ aspect-ratio:1/1; object-fit:cover; }
+  .hc-c{ aspect-ratio:1/1; object-fit:cover; }
+  .hand-badge{
+    position:absolute;
+    bottom:-18px; left:-18px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:50%;
+    width:118px; height:118px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    font-family:'Space Mono', monospace;
+    font-size:0.68rem;
+    line-height:1.35;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    box-shadow:var(--paper-shadow);
+    color:var(--terracotta-dark);
+    font-weight:700;
+    transform:rotate(-8deg);
+  }
+  @media(max-width:900px){ .hand-badge{ display:none; } }
+
+  /* ---------- About strip ---------- */
+  .about{
+    background:var(--card-warm);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .about .wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+  }
+  @media(max-width:860px){ .about .wrap{ grid-template-columns:1fr; } }
+  .about img{ border-radius:14px; box-shadow:var(--paper-shadow); }
+  .about h2{ font-size:2rem; }
+  .about p{ color:var(--walnut-soft); max-width:52ch; }
+
+  /* ---------- Offerings ---------- */
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head h2{ font-size:2.3rem; }
+  .section-head p{ color:var(--walnut-soft); font-size:1.05rem; }
+
+  .offer-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:22px;
+  }
+  @media(max-width:980px){ .offer-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:560px){ .offer-grid{ grid-template-columns:1fr; } }
+  .offer-card{
+    background:var(--card);
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .offer-card:hover{ transform:translateY(-5px); box-shadow:var(--paper-shadow); }
+  .offer-card .img-wrap{ aspect-ratio:4/3; overflow:hidden; }
+  .offer-card img{ width:100%; height:100%; object-fit:cover; }
+  .offer-body{ padding:20px 20px 24px 20px; }
+  .offer-body h3{ font-size:1.15rem; margin-bottom:8px; }
+  .offer-body p{ font-size:0.93rem; color:var(--walnut-soft); margin:0; }
+
+  /* ---------- Gallery (hang-tag cards) ---------- */
+  .gallery{ background:var(--cream); }
+  .tag-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:34px 26px;
+  }
+  @media(max-width:900px){ .tag-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:560px){ .tag-grid{ grid-template-columns:1fr; } }
+  .tag-card{
+    position:relative;
+    padding-top:26px;
+  }
+  .tag-card .string{
+    position:absolute;
+    top:0; left:50%;
+    transform:translateX(-50%);
+    width:2px; height:26px;
+    background:repeating-linear-gradient(var(--walnut-soft),var(--walnut-soft) 4px, transparent 4px, transparent 7px);
+    opacity:0.55;
+  }
+  .tag-card .hole{
+    position:absolute;
+    top:16px; left:50%;
+    transform:translateX(-50%);
+    width:10px; height:10px;
+    border-radius:50%;
+    background:var(--cream);
+    border:1.5px solid var(--walnut-soft);
+    opacity:0.6;
+    z-index:2;
+  }
+  .tag-photo{
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:var(--paper-shadow);
+    aspect-ratio:1/1;
+  }
+  .tag-photo img{ width:100%; height:100%; object-fit:cover; }
+  .tag-caption{
+    margin-top:14px;
+    display:flex; justify-content:space-between; align-items:baseline;
+    gap:10px;
+  }
+  .tag-caption h4{
+    font-size:1.02rem; font-weight:600; margin:0;
+  }
+  .tag-caption .price-tag{
+    font-family:'Space Mono', monospace;
+    font-size:0.75rem;
+    color:var(--terracotta-dark);
+    background:rgba(193,96,46,0.1);
+    padding:3px 9px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+
+  /* ---------- Events banner ---------- */
+  .events{
+    background:var(--walnut);
+    color:var(--cream);
+    border-radius:24px;
+    margin:0 auto;
+    max-width:1180px;
+    padding:0;
+  }
+  .events-inner{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:0;
+    border-radius:24px;
+    overflow:hidden;
+  }
+  @media(max-width:860px){ .events-inner{ grid-template-columns:1fr; } }
+  .events-text{ padding:64px 56px; }
+  @media(max-width:600px){ .events-text{ padding:44px 28px; } }
+  .events .eyebrow{ color:var(--gold); }
+  .events .eyebrow::before{ background:var(--gold); }
+  .events h2{ color:var(--cream); font-size:2.1rem; }
+  .events p{ color:rgba(243,236,220,0.82); max-width:48ch; font-size:1.02rem; }
+  .events ul{ list-style:none; padding:0; margin:26px 0 32px 0; }
+  .events li{
+    padding:10px 0;
+    border-top:1px solid rgba(243,236,220,0.16);
+    display:flex; gap:12px; align-items:flex-start;
+    font-size:0.96rem;
+  }
+  .events li:last-child{ border-bottom:1px solid rgba(243,236,220,0.16); }
+  .events li::before{
+    content:"";
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--terracotta);
+    margin-top:8px;
+    flex-shrink:0;
+  }
+  .events-img{
+    position:relative;
+    min-height:280px;
+  }
+  .events-img img{ width:100%; height:100%; object-fit:cover; }
+
+  /* ---------- Process ---------- */
+  .process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:26px;
+  }
+  @media(max-width:900px){ .process-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:560px){ .process-grid{ grid-template-columns:1fr; } }
+  .step{
+    position:relative;
+    padding-top:8px;
+  }
+  .step .num{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:2.6rem;
+    color:var(--terracotta);
+    opacity:0.55;
+    line-height:1;
+    margin-bottom:14px;
+    display:block;
+  }
+  .step h3{ font-size:1.08rem; margin-bottom:8px; }
+  .step p{ color:var(--walnut-soft); font-size:0.93rem; margin:0; }
+
+  /* ---------- Makers ---------- */
+  .makers{ background:var(--card-warm); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .maker-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:26px;
+  }
+  @media(max-width:980px){ .maker-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:640px){ .maker-grid{ grid-template-columns:1fr; } }
+  .maker-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:32px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .maker-avatar{
+    width:64px;height:64px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--terracotta), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif;
+    color:var(--cream);
+    font-size:1.3rem;
+    font-weight:700;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .maker-avatar img{ width:100%; height:100%; object-fit:cover; }
+  .maker-card h3{ font-size:1.25rem; margin-bottom:2px; }
+  .maker-role{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--terracotta-dark);
+    margin-bottom:14px;
+  }
+  .maker-card p.bio{ color:var(--walnut-soft); font-size:0.95rem; margin:0 0 20px 0; flex-grow:1;}
+  .maker-contact{
+    display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .chip{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:0.85rem; font-weight:600;
+    padding:9px 15px;
+    border-radius:20px;
+    text-decoration:none;
+    border:1.3px solid var(--line);
+  }
+  .chip.wa{ background:#e9f3e6; color:#3c6b34; border-color:transparent; }
+  .chip.mail{ background:rgba(52,35,26,0.06); color:var(--walnut); }
+  .placeholder-note{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    color:var(--terracotta-dark);
+    background:rgba(217,164,65,0.18);
+    padding:6px 10px;
+    border-radius:6px;
+    display:inline-block;
+    margin-bottom:14px;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+  }
+  @media(max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-methods{ display:flex; flex-direction:column; gap:16px; }
+  .method{
+    display:flex; align-items:center; gap:16px;
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:18px 20px;
+    border-radius:14px;
+    text-decoration:none;
+  }
+  .method:hover{ border-color:var(--terracotta); }
+  .method .ic{
+    width:42px;height:42px; border-radius:50%;
+    background:var(--card-warm);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    font-size:1.1rem;
+  }
+  .method .m-title{ font-weight:700; font-size:0.98rem; }
+  .method .m-sub{ font-size:0.85rem; color:var(--walnut-soft); }
+
+  form.enquiry{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:34px;
+  }
+  form.enquiry .row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  @media(max-width:560px){ form.enquiry .row{ grid-template-columns:1fr; } }
+  form.enquiry label{
+    display:block; font-size:0.82rem; font-weight:700;
+    margin-bottom:6px; color:var(--walnut-soft);
+    font-family:'Space Mono', monospace;
+    text-transform:uppercase; letter-spacing:0.04em; font-size:0.72rem;
+  }
+  form.enquiry input, form.enquiry select, form.enquiry textarea{
+    width:100%;
+    padding:12px 14px;
+    border-radius:9px;
+    border:1.3px solid var(--line);
+    background:var(--cream);
+    font-family:'Karla', sans-serif;
+    font-size:0.96rem;
+    color:var(--walnut);
+  }
+  form.enquiry input:focus, form.enquiry select:focus, form.enquiry textarea:focus{
+    outline:2px solid var(--terracotta);
+    outline-offset:1px;
+  }
+  form.enquiry .field{ margin-bottom:16px; }
+  form.enquiry textarea{ resize:vertical; min-height:100px; }
+  .submit-btn{
+    background:var(--terracotta);
+    color:var(--card);
+    border:none;
+    padding:14px 30px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:0.98rem;
+    cursor:pointer;
+    font-family:'Karla',sans-serif;
+    transition:background .2s ease;
+  }
+  .submit-btn:hover{ background:var(--terracotta-dark); }
+  .form-note{ font-size:0.78rem; color:var(--walnut-soft); margin-top:12px; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--walnut);
+    color:rgba(243,236,220,0.75);
+    padding:56px 0 28px 0;
+  }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    flex-wrap:wrap; gap:30px;
+    padding-bottom:36px;
+    border-bottom:1px solid rgba(243,236,220,0.14);
+    margin-bottom:24px;
+  }
+  footer .logo{ color:var(--cream); }
+  footer .logo .amp{ color:var(--gold); }
+  .footer-links{ display:flex; gap:40px; flex-wrap:wrap; }
+  .footer-col h5{
+    font-family:'Space Mono', monospace;
+    text-transform:uppercase; font-size:0.7rem; letter-spacing:0.08em;
+    color:var(--gold); margin-bottom:12px;
+  }
+  .footer-col a{
+    display:block; text-decoration:none; font-size:0.92rem;
+    color:rgba(243,236,220,0.75);
+    margin-bottom:8px;
+  }
+  .footer-col a:hover{ color:var(--cream); }
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:0.78rem;
+    font-family:'Space Mono', monospace;
+    color:rgba(243,236,220,0.5);
+  }
+
+  /* skip link for accessibility */
+  .skip-link{
+    position:absolute; left:-999px; top:auto;
+    background:var(--terracotta); color:#fff; padding:10px 16px; border-radius:8px; z-index:999;
+  }
+  .skip-link:focus{ left:20px; top:20px; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+  <nav class="wrap">
+    <div class="logo"><img class="logo-mark" src="images/logo.jpeg" alt="Concilio & Colours logo">Concilio <span class="amp">&amp;</span> Colours</div>
+    <div class="navlinks">
+      <a href="#offerings">Offerings</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#events">For Events</a>
+      <a href="#process">How it Works</a>
+      <a href="#makers">Meet Us</a>
+    </div>
+    <a class="nav-cta" href="https://wa.me/918286960892?text=Hi%20Concilio%20%26%20Colours!%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">3D Printed · Hand Painted</span>
+        <h1>Every piece, finished by <em>hand</em>.</h1>
+        <p class="lead">Concilio &amp; Colours turns a single 3D printer into charms, keychains, lamps and made-to-order pieces — printed with precision, then painted one colour at a time. From single gifts to full event orders.</p>
+        <div class="btnrow">
+          <a class="btn btn-primary" href="#gallery">Browse the Range</a>
+          <a class="btn btn-ghost" href="#contact">Start an Enquiry</a>
+        </div>
+      </div>
+      <div class="hero-collage">
+        <img class="hc-a" src="images/keychain-fox-praying.jpeg" alt="Hand-painted orange articulated fox keychain">
+        <img class="hc-b" src="images/keychain-squirrels.jpeg" alt="Hand-painted squirrel keychains hanging on a wooden stand">
+        <img class="hc-c" src="images/lamp-orange-ribbed.jpeg" alt="3D printed ribbed table lamp in terracotta and cream">
+        <div class="hand-badge">Painted<br>by hand<br>· every piece</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="wrap">
+      <img src="images/keychain-paws.jpeg" alt="Hand-painted paw print keychains in pink and orange">
+      <div>
+        <span class="eyebrow">The Studio</span>
+        <h2>Concilio, gathering — of design, print and colour.</h2>
+        <p>It started with one 3D printer and a lot of curiosity. Now it's charms, keychains, night lamps, and one-off pieces — each one printed layer by layer, then hand-painted so no two finishes are quite identical. If you can describe it, there's a good chance we can print it, paint it, and get it to you.</p>
+        <div class="dabs"><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERINGS -->
+  <section id="offerings">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Make</span>
+        <h2>Four ways to work with us</h2>
+        <p>Every category below is printed in-house and hand-painted to order — pick a starting point, or tell us your own idea.</p>
+      </div>
+      <div class="offer-grid">
+        <div class="offer-card">
+          <div class="img-wrap"><img src="images/keychain-squirrels.jpeg" alt="Articulated squirrel keychains"></div>
+          <div class="offer-body">
+            <h3>Charms &amp; Keychains</h3>
+            <p>Flexi-print animals, paw prints, initials and novelty shapes — hand-painted in your choice of colourway.</p>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="img-wrap"><img src="images/lamp-diamond.jpeg" alt="Textured diamond-pattern table lamp"></div>
+          <div class="offer-body">
+            <h3>Lamps &amp; Night Lights</h3>
+            <p>Textured, sculptural shades in warm tones — tabletop lighting that doubles as a centrepiece.</p>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="img-wrap"><img src="images/decor-coffee-tray.jpeg" alt="Printed sofa-arm coffee tray with cups"></div>
+          <div class="offer-body">
+            <h3>Décor &amp; Everyday Objects</h3>
+            <p>Trays, dishes, novelty pieces and small functional objects, printed and finished on request.</p>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="img-wrap"><img src="images/keychain-fox-praying.jpeg" alt="Custom hand-painted keychain example"></div>
+          <div class="offer-body">
+            <h3>Custom &amp; Made-to-Order</h3>
+            <p>Your design, your colours, your names or initials — quoted individually once we know the brief.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">A Peek at the Bench</span>
+        <h2>From the workshop</h2>
+        <p>A small sample of recent prints and paint jobs. Swap in your favourites, add prices, or link each tag straight to an order form.</p>
+      </div>
+      <div class="tag-grid">
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/keychain-squirrels.jpeg" alt="Squirrel flexi keychains"></div>
+          <div class="tag-caption"><h4>Flexi Squirrel Keychain</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/keychain-paws.jpeg" alt="Paw print keychains"></div>
+          <div class="tag-caption"><h4>Paw Print Keychain</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/keychain-fox-praying.jpeg" alt="Praying fox keychain"></div>
+          <div class="tag-caption"><h4>Articulated Fox Charm</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/lamp-wavy-collage.jpeg" alt="Wavy textured table lamp"></div>
+          <div class="tag-caption"><h4>Wavy Shade Lamp</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/lamp-orange-ribbed.jpeg" alt="Orange ribbed lamp"></div>
+          <div class="tag-caption"><h4>Ribbed Terracotta Lamp</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/lamp-diamond.jpeg" alt="Diamond pattern lamp"></div>
+          <div class="tag-caption"><h4>Diamond-Cut Shade</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/lamp-pleated-tripod.jpeg" alt="Pleated tripod lamp"></div>
+          <div class="tag-caption"><h4>Pleated Tripod Lamp</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/lamp-spiral.jpeg" alt="Spiral swirl lamp"></div>
+          <div class="tag-caption"><h4>Spiral Swirl Lamp</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/lamp-wavy-amber.jpeg" alt="Amber wavy lamp"></div>
+          <div class="tag-caption"><h4>Amber Wave Lamp</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/decor-softserve-cones.jpeg" alt="Soft serve ice cream cone decor pieces"></div>
+          <div class="tag-caption"><h4>Soft-Serve Novelty Piece</h4><span class="price-tag">on request</span></div>
+        </div>
+
+        <div class="tag-card">
+          <div class="string"></div><div class="hole"></div>
+          <div class="tag-photo"><img src="images/decor-coffee-tray.jpeg" alt="Coffee tray decor"></div>
+          <div class="tag-caption"><h4>Sofa-Arm Coffee Tray</h4><span class="price-tag">on request</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="wrap">
+      <div class="events">
+        <div class="events-inner">
+          <div class="events-text">
+            <span class="eyebrow">For Event Managers &amp; Bulk Orders</span>
+            <h2>Party favours, gifting &amp; branded pieces — sorted in one thread.</h2>
+            <p>Whether it's return gifts for a birthday, wedding favours, or branded keychains for a corporate offsite, we handle it as one order from quote to delivery.</p>
+            <ul>
+              <li>Consistent colourways across large quantities</li>
+              <li>Custom shapes, initials or logos on request</li>
+              <li>Priority scheduling once quantity &amp; date are confirmed</li>
+              <li>Sample piece available before you commit to full quantity</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/918286960892?text=Hi%2C%20I%27m%20an%20event%20organiser%20and%20I%27d%20like%20a%20quote%20for%20a%20bulk%20order." target="_blank" rel="noopener">Get a Bulk Quote</a>
+          </div>
+          <div class="events-img">
+            <img src="images/decor-softserve-cones.jpeg" alt="Colourful soft-serve novelty pieces, an example of a themed batch order">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How It Works</span>
+        <h2>From idea to your doorstep</h2>
+      </div>
+      <div class="process-grid">
+        <div class="step">
+          <span class="num">01</span>
+          <h3>Tell us the idea</h3>
+          <p>WhatsApp, email or the form below — share your quantity, colours and, if it's for an event, your date.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <h3>We quote &amp; confirm</h3>
+          <p>You'll get pricing and a colour plan based on size and detail before anything goes to print.</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <h3>Print &amp; hand-paint</h3>
+          <p>Each piece is printed, then finished by hand — layer by layer, colour by colour.</p>
+        </div>
+        <div class="step">
+          <span class="num">04</span>
+          <h3>It reaches you</h3>
+          <p>Packed carefully and shipped, or ready for pickup — your call.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKERS -->
+  <section id="makers" class="makers">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Meet Us</span>
+        <h2>The people behind the printer</h2>
+      </div>
+      <div class="maker-grid">
+        <div class="maker-card">
+          <div class="maker-avatar"><img src="images/toffee.jpeg" alt="Toffee, a cream-coloured cat, winking"></div>
+          <h3>Toffee</h3>
+          <div class="maker-role">Owner &amp; Founder · Concilio &amp; Colours</div>
+          <p class="bio">The reason this entire project exists. Has full faith in the team — they work hard for the company, and they pick up the poop.</p>
+        </div>
+        <div class="maker-card">
+          <div class="maker-avatar">R</div>
+          <h3>Rohit Sawant</h3>
+          <div class="maker-role">Design &amp; Printing · Concilio &amp; Colours</div>
+          <p class="bio">Runs the design and printing side of every piece. Concilio &amp; Colours is his third venture — before this, he ran a fast food restaurant and a hydroponic farm, so building things from scratch is familiar territory.</p>
+          <div class="maker-contact">
+            <a class="chip wa" href="https://wa.me/918286960892" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a class="chip mail" href="mailto:concilioandcolours@gmail.com">✉️ Email</a>
+          </div>
+        </div>
+        <div class="maker-card">
+          <div class="maker-avatar">A</div>
+          <h3>Anagha Shinde</h3>
+          <div class="maker-role">Hand-Painting &amp; Colour · Concilio &amp; Colours</div>
+          <p class="bio">Hand-paints every keychain, charm and clicker that goes out the door. Years of design experience shape the colour palettes — the reason each piece looks this good up close.</p>
+          <div class="maker-contact">
+            <a class="chip wa" href="https://wa.me/919699135280" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a class="chip mail" href="mailto:concilioandcolours@gmail.com">✉️ Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Have an idea, an event, or just a question?</h2>
+        <p>Reach out however's easiest — or fill in the form and we'll get back to you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-methods">
+          <a class="method" href="https://wa.me/918286960892?text=Hi%20Concilio%20%26%20Colours!" target="_blank" rel="noopener">
+            <span class="ic">💬</span>
+            <span><span class="m-title">WhatsApp</span><br><span class="m-sub">+91 82869 60892</span></span>
+          </a>
+          <a class="method" href="mailto:concilioandcolours@gmail.com">
+            <span class="ic">✉️</span>
+            <span><span class="m-title">Email</span><br><span class="m-sub">concilioandcolours@gmail.com</span></span>
+          </a>
+          <a class="method" href="https://www.instagram.com/concilioandcolours" target="_blank" rel="noopener">
+            <span class="ic">📷</span>
+            <span><span class="m-title">Instagram</span><br><span class="m-sub">@concilioandcolours</span></span>
+          </a>
+        </div>
+
+        <form class="enquiry" action="https://formsubmit.co/concilioandcolours@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New enquiry from Concilio & Colours website">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="Name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone or WhatsApp</label>
+              <input type="tel" id="phone" name="Phone" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="type">Enquiry type</label>
+            <select id="type" name="Enquiry Type">
+              <option>Personal / one-off order</option>
+              <option>Event or bulk order</option>
+              <option>Custom / made-to-order design</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="qty">Approx. quantity</label>
+              <input type="text" id="qty" name="Approx Quantity" placeholder="e.g. 1, or 50 for events">
+            </div>
+            <div class="field">
+              <label for="date">Date needed by</label>
+              <input type="text" id="date" name="Date Needed" placeholder="e.g. 12 Sept">
+            </div>
+          </div>
+          <div class="field">
+            <label for="msg">Tell us about it</label>
+            <textarea id="msg" name="Message" placeholder="Colours, references, event details — anything helps."></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Send Enquiry</button>
+          <p class="form-note">This form sends straight to our inbox via FormSubmit — no account or backend needed. First-time setup note is in the deployment guide.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="logo"><img class="logo-mark" src="images/logo.jpeg" alt="Concilio & Colours logo">Concilio <span class="amp">&amp;</span> Colours</div>
+        <p style="max-width:32ch; font-size:0.9rem; margin-top:10px;">3D printed, hand-painted charms, keychains, lamps and made-to-order pieces.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="#offerings">Offerings</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#events">For Events</a>
+          <a href="#process">How it Works</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="https://wa.me/918286960892" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:concilioandcolours@gmail.com">Email</a>
+          <a href="https://www.instagram.com/concilioandcolours" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Concilio &amp; Colours</span>
+      <span>Printed &amp; painted by hand, one order at a time</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
