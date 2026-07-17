@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you — Concilio & Colours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Karla:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F3ECDC;
+    --card:#FBF6EC;
+    --terracotta:#C1602E;
+    --terracotta-dark:#9C4A22;
+    --walnut:#34231A;
+    --walnut-soft:#5B4535;
+    --gold:#D9A441;
+    --line: rgba(52,35,26,0.14);
+    --paper-shadow: 0 10px 30px rgba(52,35,26,0.12);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--walnut);
+    font-family:'Karla', sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .card{
+    max-width:520px;
+    width:100%;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:52px 44px;
+    text-align:center;
+    box-shadow:var(--paper-shadow);
+  }
+  .logo-mark{
+    width:64px; height:64px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:22px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  .dabs{ display:flex; gap:10px; align-items:center; justify-content:center; margin:0 0 22px 0; }
+  .dabs span{ width:12px;height:12px; border-radius:50% 48% 52% 46% / 55% 45% 55% 45%; display:inline-block; }
+  .dabs span:nth-child(1){background:var(--terracotta);}
+  .dabs span:nth-child(2){background:var(--gold);}
+  .dabs span:nth-child(3){background:#6F7A54;}
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:2.1rem;
+    margin:0 0 14px 0;
+  }
+  h1 em{ font-style:italic; color:var(--terracotta); font-weight:500; }
+  p{
+    color:var(--walnut-soft);
+    font-size:1.02rem;
+    line-height:1.6;
+    max-width:38ch;
+    margin:0 auto 30px auto;
+  }
+  .btnrow{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:0.94rem;
+    transition:transform .18s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--terracotta); color:var(--card); }
+  .btn-ghost{ background:transparent; color:var(--walnut); border:1.5px solid var(--walnut); }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.7rem;
+    color:var(--terracotta-dark);
+    font-weight:700;
+    display:block;
+    margin-bottom:14px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo-mark" src="images/logo.jpeg" alt="Concilio & Colours logo">
+    <span class="eyebrow">Message Received</span>
+    <h1>Thanks — that's <em>landed</em> with us.</h1>
+    <p>We've got your enquiry and will get back to you on WhatsApp or email shortly. If it's urgent, feel free to message us directly.</p>
+    <div class="dabs"><span></span><span></span><span></span></div>
+    <div class="btnrow">
+      <a class="btn btn-primary" href="https://wa.me/918286960892" target="_blank" rel="noopener">Message on WhatsApp</a>
+      <a class="btn btn-ghost" href="index.html">Back to the Site</a>
+    </div>
+  </div>
+</body>
+</html>
